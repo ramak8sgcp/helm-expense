@@ -1,5 +1,5 @@
 deployment: 
-  imageVersion: v1
+  imageVersion: stable-alpine
   replicas: 4
 service:
   port: 80
