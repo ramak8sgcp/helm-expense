@@ -1,0 +1,13 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscalar
+metadata: 
+    name: frontend
+    namespace: expense
+spec:
+    scaleTragerRef:
+        apiVersion: apps/v1
+        kind: Deployment
+        name: frontend
+    minReplicas: 1
+    maxReplicas: 10
+    targetCPUUtilizationPercentage: {{ .Values.hpa.cpuUtilization }}
